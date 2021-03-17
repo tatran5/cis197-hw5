@@ -1,10 +1,11 @@
 import React from 'react'
-import EditIntro from './EditIntro'
+import IntroContainer from './IntroContainer'
 
 const App = () => (
-	<>
-		<EditIntro/>
-	</>
+  <div>
+    <h2>Test</h2>
+		<IntroContainer />
+  </div>
 )
 
 export default App

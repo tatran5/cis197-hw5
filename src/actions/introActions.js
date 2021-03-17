@@ -3,3 +3,7 @@ export const editIntro = (imageURL, description) => ({
 	imageURL: imageURL,
 	description: description
 })
+
+export const getIntro = () => ({
+	type: 'GET_INTRO',
+})
