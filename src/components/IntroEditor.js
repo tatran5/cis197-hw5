@@ -13,11 +13,14 @@ const IntroEditor = ({ display, dispatchEditIntro }) => {
 
 	return (
 		<div className='intro-editor'>
-			<label htmlFor="input-image-url">Image URL</label>
-			<input type="text" id="input-image-url" name="input-image-url" onChange={e => setInputImageURL(e.target.value)} />
-			<label htmlFor="input-description">Description</label>
-			<input type="text" id="input-description" name="input-description" onChange={e => setInputDescription(e.target.value)} />
-			<br/>
+			<div className='input-image-container'>
+				<label htmlFor="input-image-url">Image URL</label>
+				<input type="text" id="input-image-url" name="input-image-url" onChange={e => setInputImageURL(e.target.value)} />
+			</div>
+			<div className='input-description-container'>
+				<label htmlFor="input-description">Description</label>
+				<input type="text" id="input-description" name="input-description" onChange={e => setInputDescription(e.target.value)} />			
+			</div>
 			<button onClick={() => updateIntro()}>Save</button>
 			<button onClick={() => display(false)}>Cancel</button>
 		</div>

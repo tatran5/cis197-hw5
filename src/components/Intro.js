@@ -5,8 +5,8 @@ import { getIntro } from '../actions/introActions'
 const Intro = ({ imageURL, description, displayHidden }) => {
 	return (
 		<div>
-			<img className='intro-image' src = {imageURL} />
-			<div className='intro-description'>{description}</div>
+			<img className='intro-image' src = {imageURL} /> <br/>
+			<div className='intro-description'>{description}</div> <br/>
 			<button onClick={()=>displayHidden(true)}>Edit</button>
 		</div>
 	)
