@@ -1,4 +1,9 @@
-let postCounter = 0
+let postCounter = 0;
+
+export const getNewPostId = () => ({
+	type: 'GET_NEW_ID',
+	id: postCounter + 1,
+})
 
 export const addPost = (title, imageURL, description) => ({
 	type: 'ADD_POST',

@@ -1,21 +1,15 @@
-const defaultState = [
-	{
-		id : 0,
-		title: 'sleepy',
-		imageURL: 'https://avatarfiles.alphacoders.com/263/thumb-263062.png',
-		description: 'help please'
-	}
-]
+const defaultState = []
 
 const posts = (state = defaultState, action) => {
 	const { type, id, title, imageURL, description } = action;
+
 	switch (type) {
 		case 'ADD_POST':
 			return [
 				...state, { id, title, imageURL, description }
 			];
 		case 'DELETE_POST':
-			return state.map(post =>  {if (post.id !== id) return post;});
+			return state.filter(post =>  post.id !== id);
 		case 'EDIT_POST':
 			return state.map(post => {
         if (post.id === id) {
@@ -23,6 +17,8 @@ const posts = (state = defaultState, action) => {
         }
 				return post;
       })
+		case 'GET_NEW_ID':
+			return id; 
 		default:
 			return state;
 	}
