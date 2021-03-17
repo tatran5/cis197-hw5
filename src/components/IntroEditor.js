@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { getIntro } from '../actions/introActions'
+import { editIntro } from '../actions/introActions'
 
-const IntroEditor = ({ display }) => {
+const IntroEditor = ({ display, dispatchEditIntro }) => {
 	const [inputImageURL, setInputImageURL] = useState('');
 	const [inputDescription, setInputDescription] = useState('');
+
+	const updateIntro = () => {
+		dispatchEditIntro(inputImageURL, inputDescription);
+		display(false);
+	}
 
 	return (
 		<div className='intro-editor'>
@@ -13,14 +18,14 @@ const IntroEditor = ({ display }) => {
 			<label htmlFor="input-description">Description</label>
 			<input type="text" id="input-description" name="input-description" onChange={e => setInputDescription(e.target.value)} />
 			<br/>
-			<button onClick={() => console.log('u')}>Save</button>
+			<button onClick={() => updateIntro()}>Save</button>
 			<button onClick={() => display(false)}>Cancel</button>
 		</div>
 	)
 }
 
 const mapDispatchToProps = dispatch => ({
-	dispatchGetIntro: () => dispatch(getIntro())
+	dispatchEditIntro: (imageURL, description) => dispatch(editIntro(imageURL, description))
 })
 
-export default connect(null, null)(IntroEditor)
+export default connect(null, mapDispatchToProps)(IntroEditor)
