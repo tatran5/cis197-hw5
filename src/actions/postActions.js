@@ -15,7 +15,7 @@ export const deletePost = (id) => ({
 
 export const editPost = (id, title, imageURL, description) => ({
 	type: 'EDIT_POST',
-	id: postCounter++,
+	id: id,
 	title: title,
 	imageURL: imageURL,
 	description: description

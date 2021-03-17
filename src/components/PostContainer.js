@@ -6,10 +6,6 @@ import PostEditor from './PostEditor';
 const PostContainer = ({id, title, imageURL, description}) => {
 	const [editing, setEditing] = useState(false);
 
-	const saveEdit = () => {
-		setEditing(false);
-	}
-
 	return (
 		<div className='post' id={id}>
 			{ editing? <></> : <Post id={id} title={title} imageURL={imageURL} description={description} displayHidden={setEditing}/>}

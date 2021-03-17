@@ -17,8 +17,4 @@ const mapStateToProps = state => ({
 	description: state.intro.description
 })
 
-const mapDispatchToProps = dispatch => ({
-	dispatchGetIntro: () => dispatch(getIntro())
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(Intro)
+export default connect(mapStateToProps, null)(Intro)
