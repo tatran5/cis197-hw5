@@ -9,7 +9,8 @@ const IntroContainer = () => {
 	return (
 		<div>
 			{editing? <></>: <Intro />}
-			{editing? <IntroEditor /> : <></>}
+			{editing? <IntroEditor display={setEditing} /> : <></>}
+			<button onClick={() => setEditing(!editing)}>test</button>
 		</div>
 	)
 }
