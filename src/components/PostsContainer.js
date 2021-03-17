@@ -2,23 +2,26 @@ import React, { useState } from 'react'
 import { connect } from 'react-redux'
 import PostContainer from './PostContainer'
 import PostAdd from './PostAdd'
+import '../styles/Post.css'
 
 const PostsContainer = ({ posts }) => {
 	const [addingPost, setAddingPost] = useState(false);
 
 	return (
-		<div>
-			<h1>Posts</h1>
-			{addingPost ? <></> : <button onClick={() => setAddingPost(true) }>Add post</button>}
-			{addingPost ? <PostAdd display={setAddingPost} /> : <></>}
-			{posts.map(post => <PostContainer
-				key={post.id}
-				id={post.id} 
-				title={post.title} 
-				imageURL={post.imageURL} 
-				description={post.description}
-				/>)}
-		</div>
+		<>
+			<div className='section-title'>Posts</div>
+			{addingPost ? <></> : <div className='button add' onClick={() => setAddingPost(true) }>Add post</div>}
+			<div className='PostsContainer'>
+				{addingPost ? <PostAdd display={setAddingPost} /> : <></>}
+				{posts.map(post => <PostContainer
+					key={post.id}
+					id={post.id} 
+					title={post.title} 
+					imageURL={post.imageURL} 
+					description={post.description}
+					/>)}
+			</div>
+		</>
 	)
 }
 

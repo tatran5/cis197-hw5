@@ -12,7 +12,7 @@ const IntroEditor = ({ imageURL, description, display, dispatchEditIntro }) => {
 	}
 
 	return (
-		<div className='intro-editor'>
+		<div className='IntroEditor'>
 			<div className='input-image-container'>
 				<label htmlFor="input-image-url">Image URL</label>
 				<input type="text" id="input-image-url" name="input-image-url" onChange={e => setInputImageURL(e.target.value)} value={inputImageURL}/>
@@ -21,8 +21,10 @@ const IntroEditor = ({ imageURL, description, display, dispatchEditIntro }) => {
 				<label htmlFor="input-description">Description</label>
 				<input type="text" id="input-description" name="input-description" onChange={e => setInputDescription(e.target.value)} value={inputDescription} />			
 			</div>
-			<button onClick={() => updateIntro()}>Save</button>
-			<button onClick={() => display(false)}>Cancel</button>
+			<div className='buttons'>
+				<div className='button save' onClick={() => updateIntro()}>Save</div>
+				<div className='button cancel' onClick={() => display(false)}>Cancel</div>
+			</div>
 		</div>
 	)
 }

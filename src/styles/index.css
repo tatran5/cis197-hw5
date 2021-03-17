@@ -1,0 +1,60 @@
+#root{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+* {
+	font-size: max(2.3vh, 13px);
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.button {
+	height: max(4vh, 25px);
+	width: 10vh;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	border-radius: 1vh;
+	background: white;
+	margin: 2vh 2vh 2vh 2vh;
+}
+
+.button:hover {
+	background:silver;
+	transition: 0.3s;
+}
+
+.edit {
+	background: goldenrod;
+}
+
+.save {
+	background:lightseagreen;
+}
+
+.cancel {
+	background:salmon;
+}
+
+.add {
+	background:steelblue;
+}
+
+.section-title {
+	position: relative;
+	height: fit-content;
+	width: 100%;
+	font-size: max(7vh, 20px);
+	font-weight: bold;
+	text-align: center;
+}

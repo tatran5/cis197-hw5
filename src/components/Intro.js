@@ -1,13 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
-import { getIntro } from '../actions/introActions'
 
 const Intro = ({ imageURL, description, displayHidden }) => {
 	return (
-		<div>
+		<div className='Intro'>
 			<img className='intro-image' src = {imageURL} /> <br/>
 			<div className='intro-description'>{description}</div> <br/>
-			<button onClick={()=>displayHidden(true)}>Edit</button>
+			<div className='button edit' onClick={()=>displayHidden(true)}>Edit</div>
 		</div>
 	)
 }
