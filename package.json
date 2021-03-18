@@ -4,8 +4,7 @@
   "description": "An app where user can create a post and edit their posts",
   "main": "index.js",
   "scripts": {
-    "start": "parcel index.html",
-    "test": "npm run test"
+    "start": "parcel build index.html"
   },
   "repository": {
     "type": "git",
