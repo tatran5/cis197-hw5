@@ -7,7 +7,7 @@ const PostContainer = ({id, title, imageURL, description}) => {
 	const [editing, setEditing] = useState(false);
 
 	return (
-		<div className='post' id={id}>
+		<div className='PostContainer' id={id}>
 			{ editing? <></> : <Post id={id} title={title} imageURL={imageURL} description={description} displayHidden={setEditing}/>}
 			{ editing? < PostEditor id={id} title={title} imageURL={imageURL} description={description} display={setEditing}/>: <></>}
 		</div>

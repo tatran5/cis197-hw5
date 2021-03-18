@@ -31,9 +31,9 @@ const PostEditor = ({ id, title, imageURL, description, display, dispatchEditPos
 				<label htmlFor="input-description-post">Description</label>
 				<input type="text" id="input-description-post" name="input-description-post" onChange={e => setInputDescription(e.target.value)} value={inputDescription} />
 			</div>
-			<button className='input-save-post' onClick={() => savePost() }>Save</button>
-			<button className='input-cancel-post' onClick={() => display(false)}>Cancel</button>
-			<button className='input-delete-post' onClick={() => deletePost()}>Delete</button>
+			<div className='button save' onClick={() => savePost() }>Save</div>
+			<div className='button cancel' onClick={() => display(false)}>Cancel</div>
+			<div className='button delete' onClick={() => deletePost()}>Delete</div>
 		</div>
 	)
 }

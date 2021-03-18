@@ -13,21 +13,23 @@ const PostAdd = ({display, dispatchAddPost}) => {
 	}
 
 	return (
-		<div className='post-add'>
-			<div className='input-title-post-container'>
+		<div className='PostAdd'>
+			<div className='input-container'>
 				<label htmlFor="input-title-post">Title</label>
 				<input type="text" id="input-title-post" name="input-title-post" onChange={e =>  setInputTitle(e.target.value)} />
 			</div>
-			<div className='input-image-post-container'>
+			<div className='input-container'>
 				<label htmlFor="input-image-post">Image URL</label>
 				<input type="text" id="input-image-post" name="input-image-post" onChange={e => setInputImageURL(e.target.value)} />
 			</div>
-			<div className='input-description-post-container'>
+			<div className='input-container'>
 				<label htmlFor="input-description-post">Description</label>
 				<input type="text" id="input-description-post" name="input-description-post" onChange={e => setInputDescription(e.target.value)} />
 			</div>
-			<button className='input-save-post' onClick={() => addPost() }>Save</button>
-			<button className='input-cancel-post' onClick={() => display(false)}>Cancel</button>
+			<div className='buttons'>
+				<div className='button save' onClick={() => addPost() }>Save</div>
+				<div className='button cancel' onClick={() => display(false)}>Cancel</div>
+			</div>
 		</div>
 	)
 }

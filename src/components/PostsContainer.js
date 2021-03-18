@@ -11,8 +11,8 @@ const PostsContainer = ({ posts }) => {
 		<>
 			<div className='section-title'>Posts</div>
 			{addingPost ? <></> : <div className='button add' onClick={() => setAddingPost(true) }>Add post</div>}
+			{addingPost ? <PostAdd display={setAddingPost} /> : <></>}
 			<div className='PostsContainer'>
-				{addingPost ? <PostAdd display={setAddingPost} /> : <></>}
 				{posts.map(post => <PostContainer
 					key={post.id}
 					id={post.id} 
